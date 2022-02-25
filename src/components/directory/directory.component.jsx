@@ -31,7 +31,7 @@ class Diretory extends Component {
                   size: 'large',
                   id: 4,
                   linkUrl: 'shop/womens',
-                  size: 'large'
+               
                 },
                 {
                   title: 'mens',
@@ -39,7 +39,7 @@ class Diretory extends Component {
                   size: 'large',
                   id: 5,
                   linkUrl: 'shop/mens',
-                  size: 'large' 
+                 
                 }
               ]  
         }
@@ -48,12 +48,14 @@ class Diretory extends Component {
         return (
             <div className="directory-menu">
                 {
-                    this.state.sections.map(({title, imageUrl, id, size}) => (
+                    this.state.sections.map(({id, ...otherSectionProps}) => ( //spreading all props from the object
                         <MenuItem 
                             key={id} 
-                            title={title}
-                            imageUrl={imageUrl}
-                            size={size}
+                            // title={title}
+                            // imageUrl={imageUrl}
+                            // size={size}
+                            // linkUrl={linkUrl}
+                            {...otherSectionProps}
                             
                             />
                     ))
